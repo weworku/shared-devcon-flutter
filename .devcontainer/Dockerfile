@@ -7,6 +7,7 @@ RUN set -x \
         git \
         curl \
         less \
+        vim \
         unzip \
         zip \
     && apt-get clean \
