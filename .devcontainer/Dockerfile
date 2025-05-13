@@ -16,7 +16,6 @@ ENV LESSCHARSET=utf-8
 ENV PATH="$PATH:/sdks/flutter/bin"
 RUN set -x \
     && git clone https://github.com/flutter/flutter.git -b stable /sdks/flutter \
-    && flutter channel stable \
     && flutter upgrade \
     && useradd -m dev \
     && chown -R dev:dev /sdks/flutter/
