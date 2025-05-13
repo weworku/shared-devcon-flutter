@@ -19,7 +19,7 @@
    # あらかじめて作っておかないとDockerの仕様でroot所有で作成される
    mkdir work
 
-   # VS Codeで開く
+   # VS Codeで開く(または、VSCode上でOpen FolderでもOK)
    code .
    ```
 
@@ -41,17 +41,26 @@
 ## 開発の始め方
 
 1. プロジェクトの作成
+
+   dev container起動時のディレクトリは`/usr/src/app`です。
+   このディレクトリはホスト側の`work`ディレクトリにマウントされています。
+
    ```bash
-   flutter create my_app
-   cd my_app
+   flutter create <your_app_name>
    ```
+   `your_app_name`でアプリのディレクトリが作成されます。
+   その後、dev container内でOpen folderして`your_app_name`を選択し、
+   ワークスペースの場所を切り替えると良いでしょう。
 
 2. アプリの実行
+
    ```bash
-   flutter run
+   flutter run -d web-server --web-hostname 0.0.0.0 --web-port 18888 
    ```
 
-## 注意事項
+   profileモードやreleaeモードでの起動。
+   ```bash
+   flutter run -d web-server --web-hostname 0.0.0.0 --web-port 18888 --profile
+   ```
 
-- ソースコードは`work`ディレクトリに配置してください
-- コンテナ内でFlutterコマンドを実行する際は、`work`ディレクトリ内で実行してください
+   手元のブラウザで http://localhost:18888 にアクセスするとサンプルアプリの画面が表示されます。
