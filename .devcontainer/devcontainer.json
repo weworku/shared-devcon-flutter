@@ -16,6 +16,13 @@
                 ],
                 "editor.codeActionsOnSave": {
                     "source.fixAll": "always"
+                },
+                "git.autofetch": true,
+                "github.copilot.editor.enableAutoCompletions": true,
+                "[dart]": {
+                    "editor.selectionHighlight": false,
+                    "editor.tabCompletion": "onlySnippets",
+                    "editor.wordBasedSuggestions": "off"
                 }
             }
         }
